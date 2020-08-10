@@ -4,11 +4,14 @@ class ShowAllCustomersCommand < Command
 
 
     def execute
-        puts "These are the current members:"
+        puts "These are the current customers:"
         repo = CustomerRepo.new
-        books = repo.import_members
-        books.each do |customer|
-            puts customer
+        customers = repo.import_customers
+        customers.each do |c|
+            puts c
         end
+
+        menu.display_options
+        
     end
 end

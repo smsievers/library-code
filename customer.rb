@@ -1,23 +1,22 @@
 class Customer
-    attr_accessor :name,:member_status,:late_fees
+    attr_accessor :name,:late_fees
     
-    def initialize(name,member_status = true,late_fees) 
+    def initialize(name,late_fees=0.00) 
         @name = name
-        @member_status = member_status
         @late_fees = late_fees
     end
     
     def to_csv
-        "#{@name},#{@member_status},#{@late_fees}"
+        "#{@name} who has $#{@late_fees} in late fees?"
     end
 
     def self.from_csv(string)
-        name,member_status,late_fees = string.split(",")
-        Customer.new(name,member_status,late_fees)
+        name,late_fees = string.split(",")
+        Customer.new(name,late_fees)
     end
     
     def to_s
-        "#{@name}, #{@member_status}, #{@late_fees}"
+        "#{@name}, #{@late_fees}"
     end
 end
 

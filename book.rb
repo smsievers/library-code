@@ -12,6 +12,11 @@ class Book
         "#{@title},#{@author},#{@genre},#{@rating}"
     end
 
+    def self.from_csv(string)
+        title,author,genre,rating = string.split(",")
+        Book.new(title,author,genre,rating)
+    end
+
     def to_s
         "#{@title} by #{@author}, classified as #{@genre} with a rating of #{@rating}"
     end

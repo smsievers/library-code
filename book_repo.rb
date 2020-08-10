@@ -15,9 +15,7 @@ class BookRepo
         books = []
 
         @client.read_file.each do |line|
-        
-        title, author, genre, rating = line.split(",")
-        books.push(Book.new(title, author, genre, rating))
+            books.push(Book.from_csv(line))
         end
         books
     end

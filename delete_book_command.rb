@@ -2,6 +2,7 @@ require_relative 'book'
 require_relative 'book_repo'
 
 class DeleteABookCommand
+ 
     def initialize(book)
         @book = book
     end

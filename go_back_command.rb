@@ -1,6 +1,6 @@
 class GoBackCommand < Command
 
     def execute
-        return
+        return true
     end
 end
